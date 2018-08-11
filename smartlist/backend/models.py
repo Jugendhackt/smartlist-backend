@@ -37,16 +37,16 @@ class Entry(models.Model):
             models.CASCADE)
     name = models.CharField(
             max_length=200,
-            null=False, blank=True,
+            null=True, blank=True,
             help_text="Name of the list entry")
     price = models.DecimalField(
             max_digits=15,
             decimal_places=2,
-            null=False, blank=True,
+            null=True, blank=True,
             help_text="Price of the product")
     category = models.CharField(
             max_length=100,
-            null=False, blank=True,
+            null=True, blank=True,
             help_text="Category of the product")
     STATUS = (
             ("open", "Currently not buyed"),
