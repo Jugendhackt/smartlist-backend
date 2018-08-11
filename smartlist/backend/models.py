@@ -58,7 +58,10 @@ class Entry(models.Model):
             help_text="Status of the product")
 
     def __str__(self):
-        return self.name
+        if not self.name:
+            return str(self.product)
+        else:
+            return self.name
 
     class Meta:
         verbose_name_plural = ("Entries")
