@@ -6,6 +6,9 @@ class ShoppingList(models.Model):
     name = models.CharField(max_length=200,
             help_text="Name of the shoppinglist")
 
+    def __str__():
+        return self.name
+
 class Product(models.Model):
     name = models.CharField(max_length=200,
             help_text="Name of the product")
@@ -16,6 +19,9 @@ class Product(models.Model):
             help_text="Price of the product")
     category = models.CharField(max_length=100,
             help_text="Category of the product")
+
+    def __str__():
+        return self.name
 
 class Entry(models.Model):
     shopping_list = models.ForeignKey(ShoppingList,
@@ -36,4 +42,7 @@ class Entry(models.Model):
     status = models.CharField(max_length=1,
             choices=STATUS,
             help_text="Status of the product")
+
+    def __str__():
+        return self.name
 
