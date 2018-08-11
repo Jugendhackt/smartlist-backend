@@ -42,7 +42,8 @@ class Entry(models.Model):
             ("open", "Currently not buyed"),
             ("closed", "Already bought"),
     )
-    status = models.CharField(max_length=1,
+    status = models.CharField(
+            max_length=10,
             choices=STATUS,
             help_text="Status of the product")
 
