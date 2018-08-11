@@ -46,3 +46,5 @@ class Entry(models.Model):
     def __str__():
         return self.name
 
+    class Meta:
+        verbose_name_plural = ("Entries")
