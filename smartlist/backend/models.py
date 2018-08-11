@@ -6,7 +6,7 @@ class ShoppingList(models.Model):
     name = models.CharField(max_length=200,
             help_text="Name of the shoppinglist")
 
-    def __str__():
+    def __str__(self):
         return self.name
 
 class Product(models.Model):
@@ -20,7 +20,7 @@ class Product(models.Model):
     category = models.CharField(max_length=100,
             help_text="Category of the product")
 
-    def __str__():
+    def __str__(self):
         return self.name
 
 class Entry(models.Model):
@@ -43,7 +43,7 @@ class Entry(models.Model):
             choices=STATUS,
             help_text="Status of the product")
 
-    def __str__():
+    def __str__(self):
         return self.name
 
     class Meta:
