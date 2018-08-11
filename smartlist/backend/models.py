@@ -37,3 +37,5 @@ class Entry(models.Model):
             choices=STATUS,
             help_text="Status of the product")
 
+    class Meta:
+        verbose_name_plural = ("Entries")
