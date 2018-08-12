@@ -4,7 +4,7 @@ from .models import Product, ShoppingList, Entry
 class ShoppingListSerializer(serializers.ModelSerializer):
     class Meta:
         model = ShoppingList
-        fields = ('name')
+        fields = ('id', 'name')
 
 
 class ProductSerializer(serializers.ModelSerializer):
