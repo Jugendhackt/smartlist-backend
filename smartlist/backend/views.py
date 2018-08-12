@@ -12,7 +12,6 @@ class ShoppingListsOfUser(APIView):
 
     def get(self, request, format=None):
         shoppingLists = ShoppingList.objects.all()
-        #print(shoppingLists.get(id=1).entry_set)
         serializer = ShoppingListSerializer(shoppingLists, many=True)
         return Response(serializer.data)
 
@@ -27,8 +26,12 @@ class ShoppingLists(APIView):
 
     def get(self, request, pk, format=None):
         shoppingList = self.getObject(pk)
+        entrySet = shoppingList.entry_set.all()
         serializer = ShoppingListSerializer(shoppingList)
-        return Response(serializer.data)
+        entryList = [EntrySerializer(entry).data for entry in entrySet]
+        response = serializer.data.copy()
+        response['entries'] = entryList
+        return Response(response)
 
 class Entries(APIView):
     

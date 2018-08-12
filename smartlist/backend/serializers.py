@@ -16,4 +16,4 @@ class ProductSerializer(serializers.ModelSerializer):
 class EntrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Entry
-        fields = ('shopping_list', 'product', 'name', 'price', 'category', 'status')
+        fields = ('id', 'shopping_list', 'product', 'name', 'price', 'category', 'status')
